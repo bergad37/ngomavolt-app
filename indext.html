@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Inter:wght@300;400;600&family=Open+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>NGOMA VOLT - New Energy Frontiers</title>
+    <style>
+      :root {
+        --dark-bg: #1a1a1a;
+        --teal: #26a69a;
+        --yellow: #ffd54f;
+        --light-teal: #4db6ac;
+        --dark-yellow: #ffc107;
+        --light-gray: #f5f5f5;
+        --medium-gray: #757575;
+        --white: #ffffff;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: var(--light-gray);
+        color: var(--dark-bg);
+        font-family: 'Montserrat', sans-serif;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: bold;
+      }
+      .contact-bar {
+        background-color: var(--light-gray);
+        display: flex;
+        justify-content: center;
+        padding: 10px 5%;
+        align-items: center;
+        font-size: 14px;
+      }
+
+      .contact-bar a {
+        margin-left: 6rem;
+        color: var(--dark-bg);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+      }
+
+      .contact-bar a img {
+        margin: 0.5rem;
+        color: var(--teal);
+      }
+
+      .social-icons {
+        display: flex;
+        margin-left: 20px;
+      }
+
+      .social-icons a {
+        margin-left: 10px;
+        color: var(--dark-bg);
+      }
+
+      .language-selector {
+        margin-left: 20px;
+        display: flex;
+        gap: 4;
+      }
+
+      .language-selector a {
+        margin-left: 10px;
+      }
+
+      header {
+        background-color: var(--white);
+        padding: 15px 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        height: 15vh;
+        font-weight: bolder;
+      }
+
+      .logo {
+        width: 200px;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+
+      nav ul li {
+        margin-left: 25px;
+        position: relative;
+      }
+
+      nav ul li a {
+        color: var(--dark-bg);
+        text-decoration: none;
+        font-weight: 500;
+        text-transform: uppercase;
+        font-size: 15px;
+        transition: all 0.3s ease;
+      }
+
+      nav ul li a:hover {
+        color: var(--teal);
+      }
+
+      .hero {
+        height: 80vh;
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.6)
+          ),
+          url('/api/placeholder/1200/700');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--white);
+        text-align: center;
+        position: relative;
+      }
+
+      .hero-content {
+        z-index: 1;
+        max-width: 800px;
+        padding: 0 20px;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+        font-weight: 700;
+      }
+
+      .hero h1 span.highlight-teal {
+        color: var(--teal);
+      }
+
+      .hero h1 span.highlight-yellow {
+        color: var(--yellow);
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        line-height: 1.6;
+      }
+
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          45deg,
+          rgba(38, 166, 154, 0.2),
+          rgba(255, 213, 79, 0.2)
+        );
+        z-index: 0;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 30px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 600;
+        margin: 0 10px;
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary {
+        background-color: var(--teal);
+        color: var(--white);
+        border: 2px solid var(--teal);
+      }
+
+      .btn-primary:hover {
+        background-color: var(--light-teal);
+        border-color: var(--light-teal);
+      }
+
+      .btn-secondary {
+        background-color: transparent;
+        color: var(--white);
+        border: 2px solid var(--yellow);
+      }
+
+      .btn-secondary:hover {
+        background-color: var(--yellow);
+        color: var(--dark-bg);
+      }
+
+      .section {
+        padding: 80px 5%;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .section-header h2 {
+        font-size: 2.5rem;
+        color: var(--dark-bg);
+        margin-bottom: 20px;
+        font-weight: 700;
+      }
+
+      .section-header .subtitle {
+        color: var(--teal);
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+      }
+
+      .section-header p {
+        max-width: 700px;
+        margin: 0 auto;
+        color: var(--medium-gray);
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+
+      .solutions-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+      }
+
+      .solution-card {
+        background-color: var(--white);
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+      }
+
+      .solution-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .solution-icon {
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--light-gray);
+      }
+
+      .solution-icon i {
+        font-size: 50px;
+        color: var(--teal);
+      }
+
+      .solution-content {
+        padding: 25px;
+      }
+
+      .solution-content h3 {
+        color: var(--dark-bg);
+        margin-bottom: 15px;
+        font-size: 1.5rem;
+      }
+
+      .solution-content p {
+        color: var(--medium-gray);
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .solution-link {
+        color: var(--teal);
+        font-weight: 600;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+      }
+
+      .solution-link i {
+        margin-left: 5px;
+        transition: transform 0.3s ease;
+      }
+
+      .solution-link:hover i {
+        transform: translateX(5px);
+      }
+
+      .stats-section {
+        background-color: var(--dark-bg);
+        color: var(--white);
+        padding: 60px 5%;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+      }
+
+      .stat-item {
+        text-align: center;
+      }
+
+      .stat-number {
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--yellow);
+        margin-bottom: 10px;
+      }
+
+      .stat-label {
+        font-size: 1.1rem;
+        color: var(--white);
+      }
+
+      footer {
+        background-color: var(--dark-bg);
+        color: var(--white);
+        padding: 50px 5% 20px;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-bottom: 40px;
+      }
+
+      .footer-logo {
+        width: 180px;
+        margin-bottom: 20px;
+      }
+
+      .footer-about p {
+        color: var(--medium-gray);
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .footer-links h4 {
+        color: var(--white);
+        margin-bottom: 20px;
+        font-size: 1.2rem;
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      .footer-links h4::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50px;
+        height: 2px;
+        background-color: var(--teal);
+      }
+
+      .footer-links ul {
+        list-style: none;
+      }
+
+      .footer-links ul li {
+        margin-bottom: 10px;
+      }
+
+      .footer-links ul li a {
+        color: var(--medium-gray);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer-links ul li a:hover {
+        color: var(--teal);
+      }
+
+      .footer-contact p {
+        color: var(--medium-gray);
+        margin-bottom: 15px;
+        display: flex;
+        align-items: flex-start;
+      }
+
+      .footer-contact p i {
+        color: var(--teal);
+        margin-right: 10px;
+        margin-top: 5px;
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: var(--medium-gray);
+        font-size: 14px;
+      }
+      /* About Section Styles */
+      .about-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        margin-top: 60px;
+      }
+
+      @media (max-width: 992px) {
+        .about-container {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .about-image-column {
+        position: relative;
+      }
+
+      .about-image-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 20px;
+        height: 100%;
+      }
+
+      .image-card {
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        position: relative;
+      }
+
+      .image-card.main-image {
+        grid-row: span 2;
+        height: 80%;
+      }
+
+      .image-card.main-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .image-card.accent-image {
+        background-color: var(--teal);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        height: 60%;
+        color: var(--white);
+        transition: transform 0.3s ease;
+      }
+
+      .image-card.accent-image:hover {
+        transform: translateY(-5px);
+      }
+
+      .image-card.accent-image.secondary {
+        background-color: var(--dark-yellow);
+      }
+
+      .overlay-text {
+        text-align: center;
+      }
+
+      .highlight-number {
+        display: block;
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 5px;
+      }
+
+      .highlight-text {
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .about-content-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .about-content-wrapper {
+        max-width: 600px;
+      }
+
+      .section-subtitle {
+        color: var(--teal);
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-subtitle::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 50px;
+        height: 2px;
+        background-color: var(--teal);
+      }
+
+      .about-lead {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        color: var(--dark-bg);
+        margin-bottom: 30px;
+        font-weight: 500;
+      }
+
+      .feature-row {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 25px;
+        padding-bottom: 25px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .feature-row:last-child {
+        border-bottom: none;
+      }
+
+      .feature-icon {
+        flex-shrink: 0;
+        width: 60px;
+        height: 60px;
+        background-color: rgba(38, 166, 154, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        margin-right: 20px;
+        color: var(--teal);
+      }
+
+      .what-we-offer-section {
+        background-color: rgba(38, 166, 154, 0.05);
+      }
+      .feature-text h4 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        color: var(--dark-bg);
+      }
+
+      .feature-text p {
+        color: var(--medium-gray);
+        line-height: 1.6;
+      }
+
+      .cta-container {
+        margin-top: 30px;
+      }
+
+      .contact-section {
+        background: linear-gradient(135deg, var(--dark-bg), var(--light-teal));
+        padding: 4rem 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .contact-container {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 900px;
+        width: 100%;
+        gap: 2rem;
+      }
+
+      .contact-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        color: var(--white);
+        padding: 2rem;
+        border-radius: 12px;
+        text-align: center;
+        flex: 1;
+        min-width: 300px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .contact-card h2 {
+        color: var(--yellow);
+        font-size: 1.8rem;
+      }
+
+      .contact-card p {
+        color: var(--light-gray);
+        font-size: 1rem;
+        margin: 0.5rem 0;
+      }
+
+      .contact-info p {
+        color: var(--dark-yellow);
+        font-weight: bold;
+      }
+
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin: 1.5rem 0;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 0.8rem;
+        border-radius: 8px;
+        border: none;
+        font-size: 1rem;
+      }
+
+      .contact-form textarea {
+        min-height: 120px;
+      }
+
+      .contact-button {
+        background-color: var(--teal);
+        color: var(--white);
+        border: none;
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .contact-button:hover {
+        background-color: var(--light-teal);
+      }
+
+      .map-container {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .map-container iframe {
+        width: 100%;
+        height: 100%;
+        min-height: 300px;
+        border-radius: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Contact Bar -->
+    <div class="contact-bar">
+      <a href="mailto:info@ngomavolt.com"
+        ><img src="/assets/emailIcon.png" alt="" height="12" width="12" />
+        info@ngomavolt.com</a
+      >
+      <a href="tel:+1234567890"
+        ><img src="/assets/phone.png" alt="" height="12" width="12" />
+        <p>+250788287639</p>
+      </a>
+      <div class="social-icons">
+        <a href="#"
+          ><img src="/assets/instagram.png" alt="" height="12" width="12"
+        /></a>
+        <a href="#"
+          ><img src="/assets/facebook.png" alt="" height="12" width="12"
+        /></a>
+      </div>
+      <div class="language-selector">
+        <a href="#"
+          ><img src="/assets//world-flag.png" alt="" height="12" width="12"
+        /></a>
+        <a href="#">🌐</a>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+      <img src="/api/placeholder/200/80" alt="NGOMA VOLT Logo" class="logo" />
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Solutions</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">News</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>
+          <span class="highlight-teal">NGOMA</span>
+          <span class="highlight-yellow">VOLT</span>
+        </h1>
+        <p>
+          Leading the way in innovative energy solutions. With our expertise and
+          cutting-edge technology, we provide sustainable power conversion
+          systems tailored to your specific needs.
+        </p>
+        <div class="cta-buttons">
+          <a href="#" class="btn btn-primary">Our Solutions</a>
+          <a href="#" class="btn btn-secondary">Contact Us</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+      <div class="section-header">
+        <div class="subtitle">Who We Are</div>
+        <h2>The Tailor of the Energy Industry</h2>
+        <p>
+          At NGOMA VOLT, we craft specialized energy solutions designed to meet
+          the unique challenges of the increasingly specialized energy industry.
+        </p>
+      </div>
+
+      <div class="about-container">
+        <div class="about-image-column">
+          <div class="about-image-grid">
+            <div class="image-card main-image">
+              <img
+                src="/api/placeholder/600/400"
+                alt="NGOMA VOLT engineer working"
+              />
+            </div>
+            <div class="image-card accent-image">
+              <div class="overlay-text">
+                <span class="highlight-number">45+</span>
+                <span class="highlight-text">Countries Served</span>
+              </div>
+            </div>
+            <div class="image-card accent-image secondary">
+              <div class="overlay-text">
+                <span class="highlight-number">20+</span>
+                <span class="highlight-text">Years Experience</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-content-column">
+          <div class="about-content-wrapper">
+            <h3 class="section-subtitle">Our Company</h3>
+            <p class="about-lead">
+              We offer our specially designed energy system solutions, which we
+              produce to meet the needs of the increasingly specialized energy
+              industry, to our customers all around the world.
+            </p>
+
+            <div class="feature-row">
+              <div class="feature-icon">
+                <i>🌐</i>
+              </div>
+              <div class="feature-text">
+                <h4>Global Expertise</h4>
+                <p>
+                  With our exports to over 45 countries and our ever-growing
+                  staff, we are taking our solutions one step further each day.
+                </p>
+              </div>
+            </div>
+
+            <div class="feature-row">
+              <div class="feature-icon">
+                <i>👨‍💻</i>
+              </div>
+              <div class="feature-text">
+                <h4>Tailored Solutions</h4>
+                <p>
+                  Our expert engineer staff and project team examine the
+                  projects you send and offer you solutions that are exactly
+                  what you need.
+                </p>
+              </div>
+            </div>
+
+            <div class="feature-row">
+              <div class="feature-icon">
+                <i>🌱</i>
+              </div>
+              <div class="feature-text">
+                <h4>Sustainability Focus</h4>
+                <p>
+                  Our company moves forward with the understanding of
+                  sustainability, safety and uninterrupted service in its
+                  products, always ready to support you in your projects.
+                </p>
+              </div>
+            </div>
+
+            <div class="cta-container">
+              <a href="#solutions" class="btn btn-primary"
+                >Discover Our Solutions</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="section what-we-offer-section">
+      <div class="section-header">
+        <div class="subtitle">What We Offer</div>
+        <h2>Our Energy Solutions</h2>
+        <p>
+          We provide customized energy solutions designed specifically for the
+          increasingly specialized energy industry, meeting the exact needs of
+          our customers worldwide.
+        </p>
+      </div>
+
+      <div class="solutions-grid">
+        <div class="solution-card">
+          <div class="solution-icon">
+            <i>🏭</i>
+          </div>
+          <div class="solution-content">
+            <h3>Industrial Solutions</h3>
+            <p>
+              Tailored energy systems that ensure your business operates at
+              maximum performance, protected from power interruptions.
+            </p>
+            <a href="#" class="solution-link">Learn More <i>→</i></a>
+          </div>
+        </div>
+
+        <div class="solution-card">
+          <div class="solution-icon">
+            <i>📊</i>
+          </div>
+          <div class="solution-content">
+            <h3>Energy Efficiency</h3>
+            <p>
+              AC & DC solutions within the scope of Energy Efficiency projects
+              to optimize your power consumption and reduce costs.
+            </p>
+            <a href="#" class="solution-link">Learn More <i>→</i></a>
+          </div>
+        </div>
+
+        <div class="solution-card">
+          <div class="solution-icon">
+            <i>🏠</i>
+          </div>
+          <div class="solution-content">
+            <h3>Home & Office</h3>
+            <p>
+              Clean, safe and continuous energy you need in your home and office
+              environment with our reliable systems.
+            </p>
+            <a href="#" class="solution-link">Learn More <i>→</i></a>
+          </div>
+        </div>
+        <div class="solution-card">
+          <div class="solution-icon">
+            <i>🏠</i>
+          </div>
+          <div class="solution-content">
+            <h3>Maintenance</h3>
+            <p>
+              Clean, safe and continuous energy you need in your home and office
+              environment with our reliable systems.
+            </p>
+            <a href="#" class="solution-link">Learn More <i>→</i></a>
+          </div>
+        </div>
+        <div class="solution-card">
+          <div class="solution-icon">
+            <i>🏠</i>
+          </div>
+          <div class="solution-content">
+            <h3>Home & Office</h3>
+            <p>
+              Clean, safe and continuous energy you need in your home and office
+              environment with our reliable systems.
+            </p>
+            <a href="#" class="solution-link">Learn More <i>→</i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div class="contact-container">
+        <div class="contact-card">
+          <h2>Contact Us</h2>
+          <p>Have questions or need assistance? Reach out to us anytime!</p>
+
+          <form class="contact-form">
+            <input type="email" placeholder="Your Email" required />
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit" class="contact-button">Send Message</button>
+          </form>
+
+          <div class="contact-info">
+            <p><strong>Email:</strong> support@example.com</p>
+            <p><strong>Phone:</strong> +123 456 7890</p>
+          </div>
+        </div>
+
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509807!2d144.96305791567863!3d-37.81410797975195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577eefb3a0f77c1!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sin!4v1605086348089!5m2!1sen!2sin"
+            allowfullscreen=""
+            loading="lazy"
+          >
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">45+</div>
+          <div class="stat-label">Countries Served</div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-number">500+</div>
+          <div class="stat-label">Projects Completed</div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-number">20+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Client Satisfaction</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-about">
+          <img
+            src="/api/placeholder/180/70"
+            alt="NGOMA VOLT Logo"
+            class="footer-logo"
+          />
+          <p>
+            NGOMA VOLT is a leading provider of energy solutions, specializing
+            in power conversion systems and sustainable energy technologies.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Solutions</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Solutions</h4>
+          <ul>
+            <li><a href="#">Industrial Solutions</a></li>
+            <li><a href="#">Energy Efficiency</a></li>
+            <li><a href="#">Home & Office</a></li>
+            <li><a href="#">Renewable Energy</a></li>
+            <li><a href="#">Power Conversion</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <p><i>🏢</i> 123 Energy Street, Power City, Country</p>
+          <p><i>✉</i> info@ngomavolt.com</p>
+          <p><i>📱</i> +123 456 7890</p>
+        </div>
+      </div>
+
+      <div class="copyright">
+        © 2025 NGOMA VOLT. All Rights Reserved. | New Energy Frontiers
+      </div>
+    </footer>
+  </body>
+</html>
